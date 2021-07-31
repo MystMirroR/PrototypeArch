@@ -1,0 +1,54 @@
+buildscript {
+    ext.kotlin_version = "1.5.21"
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = "https://dl.bintray.com/kotlin/kotlin-eap" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.0-rc01'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+
+
+    afterEvaluate {
+        if (it.hasProperty('android')) {
+            android {
+                compileSdkVersion 'android-S'
+                buildToolsVersion '31.0.0 rc2'
+
+                defaultConfig {
+                    minSdkVersion 21
+                    targetSdkVersion 30
+                    versionCode 1
+                    versionName "0.0.0.1"
+                }
+
+                compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_1_8
+                    targetCompatibility JavaVersion.VERSION_1_8
+                }
+
+                kotlinOptions {
+                    jvmTarget = '1.8'
+                }
+
+                android {
+                    kotlinOptions {
+                        jvmTarget = JavaVersion.VERSION_1_8.toString()
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+

@@ -1,0 +1,14 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = "https://dl.bintray.com/kotlin/kotlin-eap" }
+    }
+}
+rootProject.name = "PrototypeArch"
+include ':app'
+include ':core'
+include ':core_network'
+include ':core_data'
+include ':core_db'
