@@ -1,4 +1,4 @@
-package tk.mystmirror.prototypearch.ui.main
+package tk.mystmirror.prototypearch.ui.fragments.main
 
 import androidx.lifecycle.ViewModel
 

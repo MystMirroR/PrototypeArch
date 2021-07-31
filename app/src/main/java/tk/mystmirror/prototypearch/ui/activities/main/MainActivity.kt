@@ -1,8 +1,9 @@
-package tk.mystmirror.prototypearch
+package tk.mystmirror.prototypearch.ui.activities.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import tk.mystmirror.prototypearch.ui.main.MainFragment
+import androidx.appcompat.app.AppCompatActivity
+import tk.mystmirror.prototypearch.R
+import tk.mystmirror.prototypearch.ui.fragments.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
