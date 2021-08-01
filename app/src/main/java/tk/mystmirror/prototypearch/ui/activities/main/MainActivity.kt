@@ -1,11 +1,12 @@
 package tk.mystmirror.prototypearch.ui.activities.main
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import tk.mystmirror.core.util.base.MVVMActivity
 import tk.mystmirror.prototypearch.R
 import tk.mystmirror.prototypearch.ui.fragments.main.MainFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : MVVMActivity<MainActivityViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,4 +17,6 @@ class MainActivity : AppCompatActivity() {
                 .commitNow()
         }
     }
+
+    override val viewModel: MainActivityViewModel by viewModel()
 }
