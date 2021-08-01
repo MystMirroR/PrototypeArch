@@ -1,4 +1,4 @@
-package tk.mystmirror.prototypearch.ui.fragments.main
+package tk.mystmirror.prototypearch.ui.fragments.home
 
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
@@ -8,13 +8,13 @@ import org.koin.java.KoinJavaComponent.inject
 import tk.mystmirror.core.util.base.BaseViewModel
 import tk.mystmirror.core_db.prefs.Preferences
 
-class MainViewModel : BaseViewModel() {
+class HomeViewModel : BaseViewModel() {
     private val prefs: Preferences by inject<Preferences>(clazz = Preferences::class.java)
 
     @ExperimentalCoroutinesApi
     val message = prefs.testValue.asFlow()
 
-    val state: MutableStateFlow<MainState> = MutableStateFlow(MainState.LoadingState)
+    val state: MutableStateFlow<HomeState> = MutableStateFlow(HomeState.LoadingState)
 
 
     @ExperimentalCoroutinesApi

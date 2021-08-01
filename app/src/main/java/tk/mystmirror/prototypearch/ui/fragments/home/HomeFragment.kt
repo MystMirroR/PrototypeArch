@@ -1,22 +1,22 @@
-package tk.mystmirror.prototypearch.ui.fragments.main
+package tk.mystmirror.prototypearch.ui.fragments.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
-import kotlinx.android.synthetic.main.main_fragment.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tk.mystmirror.core.util.base.MVVMFragment
 import tk.mystmirror.prototypearch.R
-import tk.mystmirror.prototypearch.ui.fragments.main.MainState.*
+import tk.mystmirror.prototypearch.ui.fragments.home.HomeState.*
 
-class MainFragment : MVVMFragment<MainViewModel>() {
+class HomeFragment : MVVMFragment<HomeViewModel>() {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = HomeFragment()
     }
 
 
@@ -24,7 +24,7 @@ class MainFragment : MVVMFragment<MainViewModel>() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
 
@@ -37,6 +37,7 @@ class MainFragment : MVVMFragment<MainViewModel>() {
                 message.text = sMessage
             }
         }
+
         viewModel.timer()
 
         collectState()
@@ -60,31 +61,29 @@ class MainFragment : MVVMFragment<MainViewModel>() {
                     is FinishState -> {
                         renderFinish()
                     }
-                    else -> {
-                        renderLoading()
-                    }
+
                 }
             }
         }
     }
 
     private fun renderFinish() {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
     }
 
     private fun renderError() {
-        TODO("Not yet implemented")
+        // TODO("Not yet implemented")
     }
 
     private fun renderData() {
-        TODO("Not yet implemented")
+        //  TODO("Not yet implemented")
     }
 
     private fun renderLoading() {
-        TODO("Not yet implemented")
+        //  TODO("Not yet implemented")
     }
 
 
-    override val viewModel: MainViewModel by viewModel()
+    override val viewModel: HomeViewModel by viewModel()
 
 }

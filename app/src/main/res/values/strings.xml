@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PrototypeArch</string>
+    <string name="about_menu">About</string>
+    <string name="home_menu">Home</string>
 </resources>
